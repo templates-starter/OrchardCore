@@ -18,9 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-    - with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build
-    - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
+    - name: Install node packages
+      run: npm install
+        
+    - name: Build mdules
+      run: npm run build
